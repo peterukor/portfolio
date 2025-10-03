@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 2;
+    color: #e0e1dd;
+    background: linear-gradient(110deg,
+            #54148d 0%,
+            #3a2c78 30%,
+            #162b52 60%,
+            #0d1b2a 100%);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1,
+h2 {
+    font-family: "Segoe UI Semibold", "Helvetica Neue", sans-serif;
+    letter-spacing: 0.5px;
+}
+
+:root {
+    --hover-color: #96d88e;
+    --active-color: #14610f;
+}
+
+/* LINK BEHAVIOUR */
+.personal nav a:hover,
+.socials a:hover,
+#projects a:hover {
+    color: var(--hover-color);
+}
+
+.personal nav a:active,
+.socials a:active,
+#projects a:active {
+    color: var(--active-color);
+}
+
+a {
+    color: #9caebf;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* ===== Page-Layout ===== */
+.page-layout {
+    flex: 1;
+    display: flex;
+}
+
+/* ===== Personal ===== */
+.personal {
+    width: 30vw;
+    color: #fff;
+    padding: 2rem 1.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.personal-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.personal h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.personal p {
+    font-size: 1rem;
+    color: #9caebf;
+}
+
+/* nav */
+.personal nav ul {
+    list-style: none;
+    margin-top: 1.5rem;
+    padding-left: 0;
+}
+
+.personal nav li {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    text-align: left;
+    letter-spacing: 1px;
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+/* dash line by nav */
+.personal nav li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 2px;
+    background: #9caebf;
+    border-radius: 2px;
+}
+
+/* section on screen */
+.personal nav li.view::before {
+    background: #22c55e;
+}
+
+/* social */
+.socials {
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.socials p {
+    font-size: 0.9rem;
+    color: #9caebf;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.contact-icons {
+    display: flex;
+    margin-top: 0.8rem;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+.socials img {
+    width: 28px;
+    height: 28px;
+    filter: invert(60%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.socials img:hover {
+    opacity: 0.7;
+    transform: scale(1.2);
+}
+
+/* ===== Main Content ===== */
+.content {
+    margin-left: 30vw;
+    padding: 3rem 2rem;
+    flex: 1;
+    color: #e0e1dd;
+}
+
+section {
+    margin: 3rem 0;
+    max-width: 800px;
+}
+
+/* section titles */
+section h1 {
+    font-size: 2rem;
+    padding: 0rem 2rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    border-bottom: 2px solid #2e437b;
+    padding-bottom: 0.5rem;
+}
+
+/* Subheadings */
+section h2 {
+    font-size: 1.7rem;
+    padding-left: 0.5rem;
+    margin: 1.5rem 0 0.5rem;
+    color: #91aac7;
+}
+
+.about-me {
+    padding: 0rem 1.2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.about-me p {
+    font-size: large;
+}
+
+/* Project cards */
+#projects article {
+    margin: 1.5rem 0;
+}
+
+#projects article p,
+#projects article a {
+    padding: 0rem 1rem;
+}
+
+#projects a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #9caebf;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Skills */
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding-left: 0;
+}
+
+#skills ul li {
+    display: flex;
+    align-items: center;
+    margin: 0 0.7rem;
+}
+
+.site-footer {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    font-size: 1rem;
+    color: #e0e1dd;
+}
+
+/* ===== MOBILE OVERRIDES ===== */
+
+/* Hide mobile-only blocks by default */
+.mobile-header,
+.mobile-socials {
+    display: none;
+}
+
+/* Mobile layout */
